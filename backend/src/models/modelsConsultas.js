@@ -7,6 +7,18 @@ const pegarConsultas = async ()=> {
     return consulta[0]
 }
 
+const especificConsulta = async (name)=>{
+
+
+
+    const query = 'SELECT * FROM consulta WHERE name = ?'
+
+    const consulta = await conection.execute(query,[name])
+
+    return consulta[0]
+
+}
+
 
 const addConsultas = async (consulta)=>{
 
@@ -34,5 +46,6 @@ module.exports = {
 
     pegarConsultas,
     addConsultas,
-    excluirConsulta
+    excluirConsulta,
+    especificConsulta
 }

@@ -14,6 +14,15 @@ const addConsultas = async (req,res)=>{
 
 }
 
+const peqConsulta = async (req,res)=>{
+
+  const { name } = req.params
+
+  const pesquisarConsulta = await modeloConsulta.especificConsulta(name)
+
+  return res.status(200).json(pesquisarConsulta)
+}
+
 const removeConsulta = async (req,res)=>{
 
   const { id } = req.params
@@ -28,6 +37,7 @@ const removeConsulta = async (req,res)=>{
 module.exports = {
     pegarConsultas,
     addConsultas,
-    removeConsulta
+    removeConsulta,
+    peqConsulta
 }
 

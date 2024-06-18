@@ -5,9 +5,10 @@ const validate = require("./middlewars/mid")
 
 const controleConsulta = require('./controle/consultaControle')
 
-router.get('/consult', controleConsulta.pegarConsultas)
-router.post('/consult',validate.validarConsulta,controleConsulta.addConsultas)
-router.delete('/consult/:id',controleConsulta.removeConsulta)
+router.get('/consulta', controleConsulta.pegarConsultas)
+router.get('/consulta/:name',controleConsulta.peqConsulta)
+router.post('/consulta',validate.validarConsulta,controleConsulta.addConsultas)
+router.delete('/consulta/:id',controleConsulta.removeConsulta)
 
 
 module.exports = router

@@ -9,6 +9,7 @@ router.get('/consulta', controleConsulta.pegarConsultas)
 router.get('/consulta/:name',controleConsulta.peqConsulta)
 router.post('/consulta',validate.validarConsulta,controleConsulta.addConsultas)
 router.delete('/consulta/:id',controleConsulta.removeConsulta)
+router.put('/consulta/:id', validate.validarConsulta, controleConsulta.atualizarConsulta)
 
 
 module.exports = router

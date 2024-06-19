@@ -36,9 +36,9 @@ const removeConsulta = async (req,res)=>{
 const atualizarConsulta = async (req,res)=>{
    const {id} = req.params
 
-   await modeloConsulta.atualizarConsulta(id, req.body)
+   const atualizar = await modeloConsulta.atualizarConsulta(id, req.body)
 
-   return res.status(204).json()
+   return res.status(204).json(atualizar)
 }
 
 

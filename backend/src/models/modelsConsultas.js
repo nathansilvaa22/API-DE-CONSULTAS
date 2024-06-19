@@ -42,16 +42,19 @@ const excluirConsulta = async (id)=>{
 
 }
 
-const atualizarConsulta = async (id,consulta) =>{
+const atualizarConsulta = async (id, consulta) => {
+    const { name, idade, hospital, medico, data, horario } = consulta;
 
-    const {name,idade,hospital,medico,data,horario} = consulta
+    const query = 'UPDATE consulta SET name = ?, idade = ?, hospital = ?, medico = ?, data = ?, horario = ? WHERE id = ?';
 
-    const query =  'UPDATE consulta SET idade = ?, hospital = ?, medico = ?, data = ?. horario = ?, WHERE id = ?'
-
-    const [atualizacao] = conection.execute(query[name,idade,hospital,medico,data,horario,id])
-
-    return atualizacao
-}
+    try {
+        const [atualizacao] = await conection.execute(query, [name, idade, hospital, medico, data, horario, id]);
+        return atualizacao;
+    } catch (error) {
+        console.error('Erro ao atualizar consulta:', error);
+        throw error;
+    }
+};
 
 module.exports = {
 

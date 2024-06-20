@@ -81,7 +81,7 @@ Para instalar e executar este projeto localmente, siga os passos abaixo:
         "data": "Data desejada",
         "horario": "Horario desejado"
     }
-    ```
+    
 
 ### Listar Consultas
 
@@ -99,7 +99,7 @@ Para instalar e executar este projeto localmente, siga os passos abaixo:
           "data": "Data desejada",
           "horario": "Horario desejado"
         },
-        ...
+        
     ]
     ```
 
@@ -119,7 +119,7 @@ Para instalar e executar este projeto localmente, siga os passos abaixo:
           "data": "Data desejada",
           "horario": "Horario desejado"
         },
-        ...
+        
     ]
     ```
 
